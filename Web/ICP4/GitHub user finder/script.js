@@ -1,33 +1,70 @@
 function getGithubInfo(user) {
-    //1. Create an instance of XMLHttpRequest class and send a GET request using it.
-    // The function should finally return the object(it now contains the response!)
+    $('.information').text("Searching");
+    $.get(`https://api.github.com/users/${user}/events/public`)
+        .done(users => showUser(users[0]))
+        .fail(() => noSuchUser(user));
+    $.get(`https://api.github.com/users/${user}/repos`)
+        .done(repos => showRepos(repos));
 }
 
+// display the specified user's profile
 function showUser(user) {
-    //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
+    $('#results, #results .result, #results .card-header').removeClass("collapse");
+    $('.avatar').html("<img style='width: 170px; height: 170px;' src='" + user.actor.avatar_url + "' alt='Avatar'>")
+    const profile = "https://github.com/" + encodeURIComponent(user.actor.login);
+    $('.information').html("<a href='" + profile + "'>" + user.actor.login + "</a>")
+    $('.name').text(user.actor.login)
+    $('#id').text(user.actor.id)
+    $('#last').text(user.created_at)
+
+    // returns the length of followers
+    $.get(`https://api.github.com/users/${user.actor.login}/followers`).done(follower => {
+        $('#followers').empty().append($('<span/>').text("Followers: " + follower.length.toString()).addClass('badge badge-primary mr-1'));
+    })
+
+    // returns the length of followings
+    $.get(`https://api.github.com/users/${user.actor.login}/following`).done(following => {
+        $('#following').empty().append($('<span/>').text("Following: " + following.length.toString()).addClass('badge badge-success mr-1'));
+    })
+
+    // returns user's company
+    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
+        $('#company').empty().append($('<span/>').text(user.company));
+    })
+
+    // returns user's blog
+    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
+        $('#blog').empty().append($('<span/>').text(user.blog));
+    })
+
+    // returns length of the repositories
+    $.get(`https://api.github.com/users/${user.actor.login}`).done(user => {
+        $('#rep').empty().append($('<span/>').text(user.public_repos));
+    })
 }
 
+// display message if no user found
 function noSuchUser(username) {
-    //3. set the elements such that a suitable message is displayed
+    $('#results, #results .card-header').removeClass("collapse");
+    $('#results .result').addClass("collapse");
+    $('.name').text("We couldn't find any users matching : "+ username);
+}
+
+// display repositories of user
+function showRepos(repos) {
+    let output = $('.repos').empty();
+
+    for (const repo of repos) {
+        output.append($('<span/>').text(repo.name).addClass('badge badge-info mr-1'));
+    }
 }
 
 $(document).ready(function () {
     $(document).on('keypress', '#username', function (e) {
-        //check if the enter(i.e return) key is pressed
-        if (e.which == 13) {
-            //get what the user enters
+        if (e.which === 13) {
             username = $(this).val();
-            //reset the text typed in the input
             $(this).val("");
-            //get the user's information and store the respsonse
-            response = getGithubInfo(username);
-            //if the response is successful show the user's details
-            if (response.status == 200) {
-                showUser(JSON.parse(response.responseText));
-                //else display suitable message
-            } else {
-                noSuchUser(username);
-            }
+            getGithubInfo(username);
         }
     })
 });
