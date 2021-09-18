@@ -10,78 +10,81 @@
     <title>Github User Finder</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand"> Github User Finder </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#nav-content" aria-controls="nav-content" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav-content">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:63342/GitHubUserFinder/index.html?_ijt=9a4a97iflno831r67q6uicvpn3">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/">Github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://developer.github.com/v3/users/">API</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand"> Github User Finder </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#nav-content" aria-controls="nav-content" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:63342/GitHubUserFinder/index.html?_ijt=9a4a97iflno831r67q6uicvpn3">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/">Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://developer.github.com/v3/users/">API</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <div id="container">
-        <div class="card my-4">
-            <h3 class="card-header">
-                Search Github Users
-            </h3>
-            <div class="card-body">
-                <p>Enter a username to find a user profile from GitHub</p>
-                <div class="search">
-                    <p>Username: <input id="username" placeholder="eg. johndoe123" type="text"/></p>
-                </div>
-            </div>
-        </div>
-
-        <div id="results" class="card collapse">
-            <h2 class="card-header collapse">
-                Result: <span class="name"></span>
-            </h2>
-            <div class="card-body collapse result">
-                <div class="float-left mr-3">
-                    <div class="avatar"></div>
-                    <div class="information text-center"></div>
-                    <span id="followers"></span>
-                    <span id="following"></span>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        ID: <span id="id"></span>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Company: <span id="company"></span></li>
-                        <li class="list-group-item">Blog: <span id="blog"></span></li>
-                        <li class="list-group-item">Location: <span id="loc"></span></li>
-                        <li class="list-group-item">Public Repos: <span id="rep"></span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-header collapse result">
-                Repositories
-            </div>
-            <div class="card-body collapse result">
-                <div class="repos"></div>
+<div id="container">
+    <div class="card my-4">
+        <h3 class="card-header">
+            Search Github Users
+        </h3>
+        <div class="card-body">
+            <p>Enter a username to find a user profile from GitHub</p>
+            <div class="search">
+                <p>Username: <input id="username" placeholder="eg. xxxxx1234" type="text"/></p>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
+    <div id="results" class="card collapse">
+        <h2 class="card-header collapse">
+            Result: <span class="name"></span>
+        </h2>
+        <div class="card-body collapse result">
+            <div class="float-left mr-3">
+                <div class="avatar"></div>
+                <div class="information text-center"></div>
+                <span id="followers"></span>
+                <span id="following"></span>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    ID: <span id="id"></span>
+
+                </div>
+
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Company: <span id="company"></span></li>
+                    <li class="list-group-item">Blog: <span id="blog"></span></li>
+                    <li class="list-group-item">Location: <span id="loc"></span></li>
+                    <li class="list-group-item">Public Repos: <span id="rep"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-header collapse result">
+            Repositories
+        </div>
+        <div class="card-body collapse result">
+            <div class="repos"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 </body>
 </html>
