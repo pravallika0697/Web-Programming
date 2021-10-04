@@ -1,0 +1,9 @@
+.contact-info{
+   position: center;
+   color: rgb(193, 196, 224);
+   border: 2px solid rgb(133, 129, 129);
+   border-radius: 20px;
+   background-color: rgb(14, 13, 13);
+   margin-top: 250px;
+   width: 505px;
+}

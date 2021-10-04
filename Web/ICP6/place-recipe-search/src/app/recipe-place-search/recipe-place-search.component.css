@@ -1,0 +1,15 @@
+.panel-body{
+    max-height: 225px;
+    overflow: auto;
+}
+.header, .no-content{
+    position: relative;
+    color: mintcream;
+}
+.child-container,.no-content{
+    text-align: center;
+}
+ a{
+     cursor: pointer;
+     
+ }
