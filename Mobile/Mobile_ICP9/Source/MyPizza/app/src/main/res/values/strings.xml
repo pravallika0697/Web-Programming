@@ -1,0 +1,20 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">My Pizza Order System</string>
+    <string name="toppings">Toppings</string>
+    <string name="quantity">Quantity</string>
+    <string name="initial_quantity_value">1</string>
+    <string name="order">Order</string>
+    <string name="order_summary_name">Dear<xliff:g example="Mounika" id="name">%s</xliff:g></string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="order_details">Your order details:</string>
+    <string name="order_summary_cheese">Add Cheese? <xliff:g example="yes" id="addCheese">%s</xliff:g></string>
+    <string name="order_summary_mushrooms">Add Mushrooms? <xliff:g example="yes" id="addMushrooms">%s</xliff:g></string>
+    <string name="order_summary_peppers">Add Peppers? <xliff:g example="yes" id="addPeppers">%s</xliff:g></string>
+    <string name="order_summary_chicken">Add Chicken? <xliff:g example="yes" id="addChicken">%s</xliff:g></string>
+    <string name="order_summary_quantity">Quantity: <xliff:g example="2" id="quantity">%d</xliff:g></string>
+    <string name="order_summary_total_price">Total: $ <xliff:g example="10" id="price">%.2f</xliff:g></string>
+    <string name="thank_you">Thank you!</string>
+    <string name="too_much_coffee">Please select less than one hundred cups of coffee</string>
+    <string name="too_little_coffee">Please select atleast one cup of coffee</string>
+</resources>
