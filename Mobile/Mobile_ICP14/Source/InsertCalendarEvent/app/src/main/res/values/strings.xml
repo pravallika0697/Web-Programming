@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InsertCalendarEvent</string>
+    <string name="textView">This is an example for insert  calendar event</string>
+    <string name="create_event">Create Event</string>
+</resources>

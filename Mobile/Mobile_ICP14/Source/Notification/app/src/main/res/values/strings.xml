@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="send_new_notification">Send</string>
+    <string name="textview">Notification Example</string>
+    <string name="hello_all">Hello All, This is an example for notification app</string>
+    <string name="send">SEND</string>
+    <string name="channel_name">Notification</string>
+    <string name="channel_description">First Notification</string>
+    <string name="alert">You got first notification</string>
+</resources>

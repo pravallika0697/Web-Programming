@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SampleCalendarApp</string>
+    <string name="textView">This is an example for simple calendar app</string>
+    <string name="button">Display Event</string>
+</resources>
